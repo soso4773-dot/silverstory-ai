@@ -87,7 +87,7 @@ const App: React.FC = () => {
     <div className="min-h-screen bg-[#FDFBF7] text-slate-800 font-sans selection:bg-rose-200 selection:text-rose-900">
       {/* Header */}
       <header className="bg-white border-b border-stone-200 sticky top-0 z-50">
-        <div className="max-w-2xl mx-auto px-4 py-4 flex items-center justify-center">
+        <div className="max-w-xl mx-auto px-4 py-4 flex items-center justify-center">
           <div className="flex items-center gap-3">
             <div className="bg-rose-600 p-2 rounded-lg text-white">
               <Sparkles size={24} />
@@ -100,7 +100,7 @@ const App: React.FC = () => {
         </div>
       </header>
 
-      <main className="max-w-2xl mx-auto px-6 py-12 space-y-16">
+      <main className="max-w-xl mx-auto px-6 py-12 space-y-16">
         
         {/* Section 1: Input */}
         <section className="space-y-8">
@@ -124,7 +124,7 @@ const App: React.FC = () => {
               value={referenceText}
               onChange={(e) => setReferenceText(e.target.value)}
               placeholder="참고할 대본이나 이야기를 입력하세요..."
-              className="w-full h-96 p-4 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-rose-500 focus:border-transparent outline-none resize-none text-base leading-relaxed placeholder-slate-400"
+              className="w-full h-[500px] p-4 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-rose-500 focus:border-transparent outline-none resize-none text-base leading-relaxed placeholder-slate-400"
             />
           </div>
           
