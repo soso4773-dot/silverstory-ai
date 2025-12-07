@@ -117,26 +117,27 @@ const App: React.FC = () => {
 
           <div className="bg-white p-8 rounded-2xl shadow-lg border border-stone-200">
             <label htmlFor="reference" className="block text-sm font-semibold text-slate-700 mb-3">
-              참고 대본 / 스토리 입력
+              참고 대본 입력
             </label>
             <textarea
               id="reference"
               value={referenceText}
               onChange={(e) => setReferenceText(e.target.value)}
-              placeholder="여기에 참고할 이야기나 대본을 붙여넣으세요. 이 내용의 키워드를 분석하여 전혀 다른 새로운 인물과 배경의 이야기를 만듭니다..."
-              className="w-full h-80 p-4 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-rose-500 focus:border-transparent outline-none resize-none text-base leading-relaxed placeholder-slate-400"
+              placeholder="참고할 대본이나 이야기를 입력하세요..."
+              className="w-full h-96 p-4 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-rose-500 focus:border-transparent outline-none resize-none text-base leading-relaxed placeholder-slate-400"
             />
-            <div className="mt-6 flex justify-center">
-              <Button 
-                onClick={handleConceptGeneration}
-                isLoading={conceptStatus === GenerationStatus.LOADING}
-                disabled={!referenceText.trim()}
-                className="shadow-lg px-8 py-3"
-              >
-                <PenTool className="w-5 h-5 mr-2" />
-                이야기 컨셉 3가지 제안받기
-              </Button>
-            </div>
+          </div>
+          
+          <div className="flex justify-center -mt-8">
+            <Button 
+              onClick={handleConceptGeneration}
+              isLoading={conceptStatus === GenerationStatus.LOADING}
+              disabled={!referenceText.trim()}
+              className="shadow-lg px-8 py-4 text-lg"
+            >
+              <PenTool className="w-5 h-5 mr-2" />
+              이야기 컨셉 3가지 생성하기
+            </Button>
           </div>
         </section>
 
