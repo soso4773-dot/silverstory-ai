@@ -87,7 +87,7 @@ const App: React.FC = () => {
     <div className="min-h-screen bg-[#FDFBF7] text-slate-800 font-sans selection:bg-rose-200 selection:text-rose-900">
       {/* Header */}
       <header className="bg-white border-b border-stone-200 sticky top-0 z-50">
-        <div className="max-w-3xl mx-auto px-4 py-4 flex items-center justify-center">
+        <div className="max-w-2xl mx-auto px-4 py-4 flex items-center justify-center">
           <div className="flex items-center gap-3">
             <div className="bg-rose-600 p-2 rounded-lg text-white">
               <Sparkles size={24} />
@@ -100,44 +100,42 @@ const App: React.FC = () => {
         </div>
       </header>
 
-      <main className="max-w-3xl mx-auto px-4 py-12 space-y-20">
+      <main className="max-w-2xl mx-auto px-6 py-12 space-y-16">
         
         {/* Section 1: Input */}
-        <section className="space-y-6">
-          <div className="text-center space-y-4 max-w-2xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-slate-900">
+        <section className="space-y-8">
+          <div className="text-center space-y-3">
+            <h2 className="text-3xl font-serif font-bold text-slate-900">
               새로운 이야기의 시작
             </h2>
-            <p className="text-lg text-slate-600 leading-relaxed">
+            <p className="text-base text-slate-600 leading-relaxed">
               참고하고 싶은 대본이나 이야기를 들려주세요.<br/>
               60대 이상 여성들의 마음에 깊은 울림을 줄 수 있는<br/> 
               <span className="font-semibold text-rose-600">완전히 새롭고 감동적인 3가지 이야기</span>를 제안해 드립니다.
             </p>
           </div>
 
-          <div className="bg-white p-6 md:p-8 rounded-3xl shadow-xl shadow-stone-200/50 border border-stone-100 mx-auto transition-transform focus-within:scale-[1.01]">
-            <div className="relative">
-              <label htmlFor="reference" className="block text-sm font-semibold text-slate-700 mb-2 ml-1">
-                참고 대본 / 스토리 입력
-              </label>
-              <textarea
-                id="reference"
-                value={referenceText}
-                onChange={(e) => setReferenceText(e.target.value)}
-                placeholder="여기에 참고할 이야기나 대본을 붙여넣으세요. 이 내용의 키워드를 분석하여 전혀 다른 새로운 인물과 배경의 이야기를 만듭니다..."
-                className="w-full h-48 md:h-64 p-4 md:p-6 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-rose-500 focus:border-transparent outline-none resize-none text-base md:text-lg leading-relaxed shadow-inner placeholder-slate-400"
-              />
-              <div className="absolute bottom-4 right-4">
-                <Button 
-                  onClick={handleConceptGeneration}
-                  isLoading={conceptStatus === GenerationStatus.LOADING}
-                  disabled={!referenceText.trim()}
-                  className="shadow-xl"
-                >
-                  <PenTool className="w-5 h-5 mr-2" />
-                  이야기 컨셉 3가지 제안받기
-                </Button>
-              </div>
+          <div className="bg-white p-8 rounded-2xl shadow-lg border border-stone-200">
+            <label htmlFor="reference" className="block text-sm font-semibold text-slate-700 mb-3">
+              참고 대본 / 스토리 입력
+            </label>
+            <textarea
+              id="reference"
+              value={referenceText}
+              onChange={(e) => setReferenceText(e.target.value)}
+              placeholder="여기에 참고할 이야기나 대본을 붙여넣으세요. 이 내용의 키워드를 분석하여 전혀 다른 새로운 인물과 배경의 이야기를 만듭니다..."
+              className="w-full h-80 p-4 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-rose-500 focus:border-transparent outline-none resize-none text-base leading-relaxed placeholder-slate-400"
+            />
+            <div className="mt-6 flex justify-center">
+              <Button 
+                onClick={handleConceptGeneration}
+                isLoading={conceptStatus === GenerationStatus.LOADING}
+                disabled={!referenceText.trim()}
+                className="shadow-lg px-8 py-3"
+              >
+                <PenTool className="w-5 h-5 mr-2" />
+                이야기 컨셉 3가지 제안받기
+              </Button>
             </div>
           </div>
         </section>
