@@ -87,7 +87,7 @@ const App: React.FC = () => {
     <div className="min-h-screen bg-[#FDFBF7] text-slate-800 font-sans selection:bg-rose-200 selection:text-rose-900">
       {/* Header */}
       <header className="bg-white border-b border-stone-200 sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+        <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="bg-rose-600 p-2 rounded-lg text-white">
               <Sparkles size={24} />
@@ -100,7 +100,7 @@ const App: React.FC = () => {
         </div>
       </header>
 
-      <main className="max-w-6xl mx-auto px-4 py-12 space-y-20">
+      <main className="max-w-5xl mx-auto px-4 py-12 space-y-20">
         
         {/* Section 1: Input */}
         <section className="space-y-6">
